@@ -1,13 +1,6 @@
 <template>
   <div>
-  <hr/>
   <router-view/>
-    <hr/>
-    <div>
-      <router-link to="/money"/>
-      <router-link to="/labels"/>
-      <router-link to="/statistics"/>
-    </div>
   </div>
 </template>
 

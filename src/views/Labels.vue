@@ -1,7 +1,5 @@
 <template>
-    <div>Labels
-    <Nav/>
-    </div>
+    <Layout>Labels</Layout>
 </template>
 
 <script>
@@ -12,6 +10,3 @@
     }
 </script>
 
-<style scoped>
-
-</style>

@@ -4,12 +4,12 @@
             <NumberPad/>
             <Types/>
             <Notes/>
-            <Tags/>
+            <Tags :data-source.sync="tags"/>
         </Layout>
     </div>
 </template>
 
-<script lang='ts'>
+<script>
     import NumberPad from '@/components/Money/NumberPad.vue';
     import Tags from '@/components/Money/Tags.vue';
     import Types from '@/components/Money/Types.vue';
@@ -17,6 +17,11 @@
     export default {
         name: 'Money',
         components: {Notes, Types, Tags, NumberPad},
+        data(){
+            return{
+                tags:['衣','食','住','行']
+            }
+        }
     };
 </script>
 <style lang="scss">

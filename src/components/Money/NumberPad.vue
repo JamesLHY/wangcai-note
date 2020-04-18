@@ -13,7 +13,7 @@
             <button @click="inputContent">7</button>
             <button @click="inputContent">8</button>
             <button @click="inputContent">9</button>
-            <button @click="ok">OK</button>
+            <button class="ok">OK</button>
             <button @click="inputContent" class="zero">0</button>
             <button @click="inputContent">.</button>
         </div>
@@ -56,7 +56,6 @@
         clear(){
             this.output='0'
         }
-
     }
 </script>
 
@@ -83,14 +82,13 @@
                 float: left;
                 background: transparent;
                 border: none;
-
                 &.ok {
                     height: 64*2px;
                     float: right;
                 }
 
                 &.zero {
-                    width: 50%;
+                    width: 25*2%;
                 }
 
                 $bg: #f2f2f2;
@@ -120,7 +118,7 @@
                 }
 
                 &:nth-child(12) {
-                    background: darken($bg, 4*6%);
+                    background: darken($bg, 4*7%);
                 }
             }
         }

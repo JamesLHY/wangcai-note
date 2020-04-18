@@ -2,9 +2,7 @@
     <div>
         <ul class="types">
             <li :class="type==='-' && 'selected'" @click="selectType('-')">支出</li>
-            <li :class="type === '+' && 'selected'"
-                @click="selectType('+')">收入
-            </li>
+            <li :class="type==='+' && 'selected'" @click="selectType('+')">收入</li>
         </ul>
     </div>
 </template>
@@ -33,7 +31,6 @@
         display: flex;
         text-align: center;
         font-size: 24px;
-
         > li {
             width: 50px;
             height: 64px;

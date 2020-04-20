@@ -14,6 +14,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #333;
     font-size: 16px;
+    background: #f5f5f5;
   }
 
 

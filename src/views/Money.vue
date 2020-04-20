@@ -3,7 +3,9 @@
         <Layout class-prefix="layout">
             <NumberPad :value.sync='record.amount' @submit="saveRecord"/>
             <Types :value.sync="record.type"/>
-            <Notes field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateNotes"/>
+            <div class="notes">
+                <FormItem field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateNotes"/>
+            </div>
             <Tags :data-source.sync="tags" @update:value="onUpdateTags"/>
         </Layout>
     </div>
@@ -14,7 +16,7 @@
     import NumberPad from '@/components/Money/NumberPad.vue';
     import Tags from '@/components/Money/Tags.vue';
     import Types from '@/components/Money/Types.vue';
-    import Notes from '@/components/Money/Notes.vue';
+    import FormItem from '@/components/Money/FormItem.vue';
     import {Component, Watch} from 'vue-property-decorator';
     import recordListModel from '@/models/recordListModel';
     import tagListModel from '@/models/tagListModel';
@@ -25,7 +27,7 @@
 const tagList = tagListModel.fetch();
 
     @Component({
-        components: {Notes, Types, Tags, NumberPad}
+        components: {FormItem, Types, Tags, NumberPad}
     })
     export default class Money extends Vue {
         tags = tagList;
@@ -41,7 +43,7 @@ const tagList = tagListModel.fetch();
         }
 
         saveRecord() {
-            const deepClone: RecordItem = recordList.clone(this.record);
+            const deepClone: RecordItem = recordListModel.clone(this.record);
             deepClone.createdTime = new Date();
             this.recordList.push(deepClone);
 
@@ -49,7 +51,7 @@ const tagList = tagListModel.fetch();
 
         @Watch('recordList')
         onRecordListChange() {
-            recordList.save(this.recordList);
+            recordListModel.save(this.recordList);
         }
     }
 </script>
@@ -57,6 +59,9 @@ const tagList = tagListModel.fetch();
     .layout-content {
         display: flex;
         flex-direction: column-reverse;
+        .notes{
+            padding: 12px 0;
+        }
     }
 </style>
 

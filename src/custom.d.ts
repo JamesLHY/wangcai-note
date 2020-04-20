@@ -4,4 +4,5 @@ type RecordItem = {
     type: string;
     amount: number;
     createdTime?: Date ;
+
 }

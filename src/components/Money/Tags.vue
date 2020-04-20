@@ -5,12 +5,11 @@
         </div>
         <ul class="current">
             <li v-for="tag in dataSource" :key="tag"
-                :class="{selected: selectedTags.indexOf(tag)>=0 }"
+                :class="{selected: selectedTags.indexOf(tag)>0 }"
                 @click="toggle(tag)">
                 {{tag}}
             </li>
         </ul>
-
     </div>
 </template>
 
@@ -46,6 +45,7 @@
 
 <style lang="scss" scoped>
     .tags {
+        background: white;
         flex-grow: 1;
         padding: 16px;
         font-size: 14px;

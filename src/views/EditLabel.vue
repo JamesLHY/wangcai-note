@@ -46,6 +46,7 @@
         }
         remove(){
             if(this.tag){
+               window.confirm('是否删除该标签页？');
                 if(tagListModel.remove(this.tag.id)){
                     this.$router.back();
                 }else{

@@ -43,15 +43,12 @@ const tagList = tagListModel.fetch();
         }
 
         saveRecord() {
-            const deepClone: RecordItem = recordListModel.clone(this.record);
-            deepClone.createdTime = new Date();
-            this.recordList.push(deepClone);
-
+            recordListModel.create(this.record)
         }
 
         @Watch('recordList')
         onRecordListChange() {
-            recordListModel.save(this.recordList);
+            recordListModel.save();
         }
     }
 </script>

@@ -20,7 +20,6 @@ return this.tagList
         this.saveTags();
         window.alert('添加成功');
         return 'success';
-
     },
     removeTag(id: string){
         let index = -1;
@@ -55,7 +54,6 @@ return this.tagList
     },
     saveTags(){
         window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.tagList));
-
     }
 };
 tagStore.fetchTags();

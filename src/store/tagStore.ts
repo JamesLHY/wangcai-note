@@ -32,7 +32,6 @@ return this.tagList
         this.tagList.splice(index, 1);
         this.saveTags();
         return true;
-
     },
     updateTag(id: string, name: string){
         const idList = this.tagList.map(item => item.id);
@@ -50,7 +49,6 @@ return this.tagList
         } else {
             return 'not found';
         }
-
     },
     saveTags(){
         window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.tagList));

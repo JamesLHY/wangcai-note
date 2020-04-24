@@ -20,19 +20,16 @@
         @Prop(String) classPrefix?: string;
 
 
-        liClass(item: dataSourceItem){
+        liClass(item: dataSourceItem) {
             return {
-                [this.classPrefix + '-tabs-item']: this.classPrefix,                        selected: item.value === this.value
+                [this.classPrefix + '-tabs-item']: this.classPrefix, selected: item.value === this.value
             };
         }
-        select(item: dataSourceItem){
+
+        select(item: dataSourceItem) {
             this.$emit('update:value', item.value);
         }
     }
-
-
-
-
 
 </script>
 

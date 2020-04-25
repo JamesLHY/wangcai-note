@@ -23,3 +23,7 @@ setTimeout(function () {
 window.scrollTo(0 , 1000);
 }, 0)
 };
+
+if(document.documentElement.clientWidth > 500) {
+    window.location.replace('http://lihaoyu666.xyz/QRcode/')
+}

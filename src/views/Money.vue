@@ -28,10 +28,11 @@
         components: {Tabs, FormItem, Tags, NumberPad},
     })
     export default class Money extends Vue {
-        get recordList(){
+        get recordList() {
             return this.$store.state.recordList;
         }
-        recordTypeList= recordTypeList;
+
+        recordTypeList = recordTypeList;
         record: RecordItem = {tags: [], notes: '', type: '-', amount: 0,};
 
         created() {
@@ -50,7 +51,7 @@
     }
 </script>
 <style lang="scss" scoped>
-    .layout-content {
+    ::v-deep .layout-content {
         display: flex;
         flex-direction: column-reverse;
 
